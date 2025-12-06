@@ -1,11 +1,13 @@
 import Buttons from "../buttons/index.js";
 import Account from "../keyboard/account.js";
+import Back from "../keyboard/back.js";
 
 // event listner
 const event_listner = {
     // keyboard account
     ...Account,
-
+    // keyboard back
+    ...Back,
 };
 
 // keyboard list
@@ -14,6 +16,7 @@ const LIST_KEYBOARD = {
     CRYPTO: "MENU.CRYPTO",
     ORDER: "MENU.ORDER",
     SUPPORT: "MENU.SUPPORT",
+    BACK: "MENU.BACK",
 };
 
 

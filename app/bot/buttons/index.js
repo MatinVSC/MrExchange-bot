@@ -23,6 +23,12 @@ class Buttons {
         ]);
     };
 
+    // back
+    Back() {
+        return Markup.keyboard([[this.i18n.t("MENU.BACK")]]).resize().oneTime();
+    };
+
+
     // change locales
     ChangeLocales(userLocal) {
         const locales = [
