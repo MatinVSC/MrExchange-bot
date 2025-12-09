@@ -1,6 +1,7 @@
 import Buttons from "../buttons/index.js";
 import Account from "../keyboard/account.js";
 import Back from "../keyboard/back.js";
+import Crypto from "../keyboard/crypto.js";
 
 // event listner
 const event_listner = {
@@ -8,6 +9,8 @@ const event_listner = {
     ...Account,
     // keyboard back
     ...Back,
+    // keyboard crypto
+    ...Crypto
 };
 
 // keyboard list
@@ -20,7 +23,7 @@ const LIST_KEYBOARD = {
 };
 
 
-export default async (ctx) => {
+export default async (ctx, next) => {
     const text = ctx.message.text;
     const menu = new Buttons(ctx);
 
@@ -28,4 +31,6 @@ export default async (ctx) => {
         const tra = ctx.i18n.t(path);
         if (tra == text) return event_listner[key]({ ctx, i18n: ctx.i18n, menu });
     };
+
+    return next();
 };

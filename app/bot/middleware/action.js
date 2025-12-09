@@ -1,4 +1,5 @@
 import Auth from "../action/auth.js";
+import Crypto from "../action/crypto.js";
 import Locales from "../action/locales.js";
 import Buttons from "../buttons/index.js";
 
@@ -7,7 +8,9 @@ const event_listner = {
     // action Locales
     ...Locales,
     // action Verify
-    ...Auth
+    ...Auth,
+    // action crypto
+    ...Crypto
 };
 
 // action list
@@ -19,6 +22,10 @@ const LIST_ACTION = [
     {
         key: "AUTH",
         pattern: /^AUTH$/
+    },
+    {
+        key: "CRYPTO",
+        pattern: /^BUYCRYPTO_\w+/
     },
 ];
 

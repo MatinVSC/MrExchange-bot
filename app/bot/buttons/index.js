@@ -16,6 +16,27 @@ class Buttons {
             .oneTime();
     };
 
+    BuyCrypto(data) {
+        return Markup.inlineKeyboard(
+            chunk(
+                data.map(item =>
+                    Markup.button.callback(`${item.name}  (${item.nickname})`,
+                        `BUYCRYPTO_${item.nickname}`)),
+                2
+            ));
+    };
+
+    NetworkCrypto(data, name) {
+        return Markup.inlineKeyboard(
+            chunk(
+                data.map(item =>
+                    Markup.button.callback(`${item.name}  ( fee : ${item.fee} ${name} )`,
+                        `NETWORKCRYPTO_${item.nickname}`)),
+                2
+            ));
+    };
+
+
     // auth 
     Auth() {
         return Markup.inlineKeyboard([
@@ -43,7 +64,6 @@ class Buttons {
                 2
             )
         );
-
     };
 
 
