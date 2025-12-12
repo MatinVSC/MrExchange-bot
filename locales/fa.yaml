@@ -45,8 +45,8 @@ CRYPTO:
   ERRORWALLET: "🚫 آدرس کیف پول نامعتبر است. لطفاً دوباره بررسی کنید"
   SELECTNETWORK: "🌐 لطفاً <b>شبکه مورد نظر</b> را از گزینه‌های زیر انتخاب کنید"
   ERRORAUTH: "🛑 برای ادامه پرداخت، ابتدا باید <b>احراز هویت</b> انجام دهید."
-  PAYMENT: "🧾 <b>فاکتور پرداخت شما آماده شد</b>\n\n💱 نوع ارز: <b>${namecrypto}</b>\n🔢 تعداد: <b>${countcrypto}</b>\n🎯 کیف پول: <b>${walletcrypto}</b>\n🌐 شبکه: <b>${network}</b>\n💰 قیمت هر واحد ارز: <b>${price}</b> تومان\n🔎 کارمزد : <b>${fee}</b> ${namecrypto}\n🧮 قیمت نهایی فاکتور: <b>${total}</b> تومان\n\n💳 جهت پرداخت، از لینک زیر اقدام کنید:"
-  PEYMENT_MENU:
+  PAYMENT: "🧾 <b>فاکتور پرداخت شما آماده شد</b>\n\n💱 نوع ارز : <b>${cryptoName}</b>\n🔢 تعداد : <b>${countCrypto}</b>\n🎯 کیف پول : <b>${walletCrypto}</b>\n🌐 شبکه : <b>${network}</b>\n💰 قیمت هر واحد ارز : <b>${price}</b> تومان\n🔎 کارمزد : <b>${fee}</b> ${cryptoName}\n🧮 قیمت نهایی فاکتور : <b>${total}</b> تومان\n\n💳 جهت پرداخت، از لینک زیر اقدام کنید:"
+  PAYMENT_MENU:
     PAYMENT: پرداخت کن
   PAYMENT_SUCCFULLY: "پرداخت با موفقیت انجام شد \n\n🔎 کد پیگیری : ${code}"    
   SUCCFULLY: "ارز با موفقیت انتقال پیدا کرد✅\n\n⭕️نوع ارز : ${type}\n\n🔎هش پرداختی : \n${hash}"
@@ -54,7 +54,7 @@ CRYPTO:
 ORDER:
   ANSWER: 🔎 لطفا کد پیگیری خود را وارد کنید
   NOT_FOUND: ⚠️ هیچ اطلاعاتی با این کد پیگیری برای شما پیدا نشد
-  FOUND: "🌐وضعیت : <b>${status}</b>\n💱 نوع ارز: <b>${namecrypto}</b>\n🔢 تعداد: <b>${countcrypto}</b>\n🎯 کیف پول: <b>${walletcrypto}</b>\n🌐 شبکه: <b>${network}</b>"
+  FOUND: "🌐وضعیت : <b>${status}</b>\n💱 نوع ارز: <b>${cryptoName}</b>\n🔢 تعداد: <b>${countCrypto}</b>\n🎯 کیف پول: <b>${walletCrypto}</b>\n🌐 شبکه: <b>${network}</b>"
   WITHDWAR_SUCCFULY: واریز شده
   WITHDWAR_UNSUCCFULY: در حال انجام  
 # SUPPORT
