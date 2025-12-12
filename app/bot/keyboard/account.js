@@ -2,8 +2,7 @@ import { FindUsers } from "../../database/controllers/users.js";
 
 const Account = {
     ACCOUNT: async ({ ctx, i18n, menu }) => {
-        const user = await FindUsers({ id: ctx.from.id });
-        const { verify, nation, birthday } = user;
+        const { nation, birthday, verify } = await FindUsers({ id: ctx.from.id });
         ctx.replyWithHTML(i18n.t("ACCOUNT_INFO",
             {
                 verify: !verify ? " ❌" : " ✅",

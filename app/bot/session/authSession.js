@@ -89,7 +89,7 @@ const AuthSession = {
             bank: getBankNameFromCardNumber(textUser),
           },
         ];
-        await UpdateUsers({ id: ctx.from.id }, { signup: true, phonenumber: phoneNumber, nation, birthday: barth, cards });
+        await UpdateUsers({ id: ctx.from.id }, { verify: true, phonenumber: phoneNumber, nation, birthday: barth, cards });
         delete ctx.session.state;
         ctx.reply(i18n.t("Auth.SUCCESSFULY"), menu.mainButton());
     },
