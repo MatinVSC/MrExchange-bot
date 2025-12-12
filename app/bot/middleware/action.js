@@ -27,6 +27,10 @@ const LIST_ACTION = [
         key: "CRYPTO",
         pattern: /^BUYCRYPTO_\w+/
     },
+        {
+        key: "NETWORKCRYPTO",
+        pattern: /^NETWORKCRYPTO_(\w+)$/
+    },
 ];
 
 
@@ -38,5 +42,4 @@ export default async (ctx) => {
         const match = callback_data.match(pattern);
         if (match && event_listner[key]) return event_listner[key]({ ctx, i18n: ctx.i18n, match, menu });
     };
-
 };

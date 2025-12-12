@@ -31,9 +31,16 @@ class Buttons {
             chunk(
                 data.map(item =>
                     Markup.button.callback(`${item.name}  ( fee : ${item.fee} ${name} )`,
-                        `NETWORKCRYPTO_${item.nickname}`)),
+                        `NETWORKCRYPTO_${item.name}_${item.fee}`)),
                 2
             ));
+    };
+
+    // payment
+    Payment(url) {
+        return Markup.inlineKeyboard([
+            [Markup.button.url(this.i18n.t("CRYPTO.PAYMENT_MENU.PAYMENT"), url)]
+        ]);
     };
 
 
