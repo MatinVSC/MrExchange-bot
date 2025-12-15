@@ -15,7 +15,7 @@ class Zibal {
             const response = await this.http.post("request", {
                 merchant: this.merchant,
                 amount,
-                callbackUrl: `${process.env.URL}/paymantzibal`,
+                callbackUrl: `${process.env.URL}/paymentzibal`,
                 description,
                 mobile,
                 allowedCards,
