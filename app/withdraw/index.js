@@ -17,6 +17,4 @@ const LIST_CRYPTO = {
 export default async (payment) => {
     const user = await FindUsers({ id: payment.userId });
     for (const [key, path] of Object.entries(LIST_CRYPTO)) return event_listner[key]({ payment, user });
-
-    return next();
 };
