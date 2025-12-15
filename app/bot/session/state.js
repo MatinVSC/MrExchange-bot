@@ -8,4 +8,8 @@ export const LIST_SESSION = {
     //crypto
     SENDCOUNTCRYPTO: "send_count_crypto",
     SENDWALLETCRYPTO: "send_wallet_crypto",
+    // order
+    ORDERSEARCH: "order_search",
+    // support
+    SUPPORT: "support"
 };

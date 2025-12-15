@@ -2,15 +2,21 @@ import Buttons from "../buttons/index.js";
 import Account from "../keyboard/account.js";
 import Back from "../keyboard/back.js";
 import Crypto from "../keyboard/crypto.js";
+import Order from "../keyboard/orders.js";
+import Support from "../keyboard/support.js";
 
 // event listner
 const event_listner = {
-    // keyboard account
+    // account
     ...Account,
-    // keyboard back
+    // back
     ...Back,
-    // keyboard crypto
-    ...Crypto
+    // crypto
+    ...Crypto,
+    // order
+    ...Order,
+    // support
+    ...Support
 };
 
 // keyboard list

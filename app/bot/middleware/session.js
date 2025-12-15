@@ -2,13 +2,19 @@ import { LIST_SESSION } from "../session/state.js";
 import Buttons from "../buttons/index.js";
 import AuthSession from "../session/authSession.js";
 import CryptoSession from "../session/cryptoSession.js";
+import OrderSession from "../session/orderSession.js";
+import SupportSession from "../session/supportSession.js";
 
 // event listner
 const event_listner = {
-    // session auth
+    // auth
     ...AuthSession,
-    // session crypto
-    ...CryptoSession
+    // crypto
+    ...CryptoSession,
+    // order
+    ...OrderSession,
+    // support
+    ...SupportSession
 };
 
 
