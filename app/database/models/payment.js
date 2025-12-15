@@ -5,6 +5,10 @@ const paymentSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    trackId: {
+        type: Number,
+        required: true,
+    },
     type: {
         type: String,
         required: true,

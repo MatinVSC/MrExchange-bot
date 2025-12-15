@@ -23,8 +23,12 @@ const FindAllPayment = async (object) => {
     return Payment.find(object);
 };
 
+const FindAllPaymentFailed = async () => {
+    return Payment.find({ status: true, despot: 0 });
+};
+
 const UpdatePayment = async (object2, object) => {
     return Payment.updateOne(object2, object);
 };
 
-export { CreatePayment, FindPayment, FindAllPayment, UpdatePayment };
+export { CreatePayment, FindPayment, FindAllPayment, UpdatePayment, FindAllPaymentFailed };

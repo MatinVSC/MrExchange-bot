@@ -1,4 +1,5 @@
 import { FindCrypto } from "../../database/controllers/crypto.js";
+import TRC20Wallet from "../../network/trc20.js";
 import { LIST_SESSION } from "./state.js";
 
 const CryptoSession = {
@@ -17,7 +18,8 @@ const CryptoSession = {
     SENDWALLETCRYPTO: async ({ ctx, i18n, menu }) => {
         const textUser = ctx.message.text;
         // error chek wallet
-        // if (chekWallet(address)) return ctx.reply(i18n.t("CRYPTO.ERRORWALLET"));
+        const trc = new TRC20Wallet();
+        if (!(await trc.validateAddress(textUser))) return ctx.reply(i18n.t("CRYPTO.ERRORWALLET"));
         const { cryptoName } = ctx.session;
         const { network } = await FindCrypto({ nickname: cryptoName });
         ctx.session.walletCrypto = textUser;
