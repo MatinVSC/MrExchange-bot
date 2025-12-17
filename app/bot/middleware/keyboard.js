@@ -4,6 +4,8 @@ import Back from "../keyboard/back.js";
 import Crypto from "../keyboard/crypto.js";
 import Order from "../keyboard/orders.js";
 import Support from "../keyboard/support.js";
+import Message from "../panelAdmin/keyboard/message.js";
+import Total from "../panelAdmin/keyboard/total.js";
 
 // event listner
 const event_listner = {
@@ -16,16 +18,23 @@ const event_listner = {
     // order
     ...Order,
     // support
-    ...Support
+    ...Support,
+    // panel admin
+    ...Total,
+    // message admin
+    ...Message
 };
 
 // keyboard list
 const LIST_KEYBOARD = {
-    ACCOUNT: "MENU.ACCOUNT",
-    CRYPTO: "MENU.CRYPTO",
-    ORDER: "MENU.ORDER",
-    SUPPORT: "MENU.SUPPORT",
-    BACK: "MENU.BACK",
+    BACK: { path: "MENU.BACK" },
+    ACCOUNT: { path: "MENU.ACCOUNT" },
+    CRYPTO: { path: "MENU.CRYPTO" },
+    SUPPORT: { path: "MENU.SUPPORT" },
+    ORDER: { path: "MENU.ORDER" },
+    TOTAL: { path: "PANEL.MENU_PANEL.TOTAL", isAdmin: true },
+    MESSAGE_ALL: { path: "PANEL.MENU_PANEL.MESSAGE_ALL", isAdmin: true },
+    FORWARD_ALL: { path: "PANEL.MENU_PANEL.FORWARD_ALL", isAdmin: true },
 };
 
 
@@ -33,9 +42,15 @@ export default async (ctx, next) => {
     const text = ctx.message.text;
     const menu = new Buttons(ctx);
 
-    for (const [key, path] of Object.entries(LIST_KEYBOARD)) {
+    for (const [key, { path, isAdmin }] of Object.entries(LIST_KEYBOARD)) {
         const tra = ctx.i18n.t(path);
-        if (tra == text) return event_listner[key]({ ctx, i18n: ctx.i18n, menu });
+        if (tra == text) {
+            if (isAdmin) {
+                const admin = JSON.parse(process.env.ADMIN);
+                if (!admin.includes(ctx.from.id)) return false;
+            };
+            return event_listner[key]({ ctx, i18n: ctx.i18n, menu });
+        };
     };
 
     return next();

@@ -1,9 +1,10 @@
 import { Markup } from "telegraf";
 import { chunk } from "../utils/index.js";
+import ButtonsAdmin from "../panelAdmin/buttons/index.js";
 
-class Buttons {
+class Buttons extends ButtonsAdmin {
     constructor(ctx) {
-        this.i18n = ctx.i18n;
+        super(ctx);
     };
 
     // keyboard menu
@@ -56,7 +57,6 @@ class Buttons {
         return Markup.keyboard([[this.i18n.t("MENU.BACK")]]).resize().oneTime();
     };
 
-
     // change locales
     ChangeLocales(userLocal) {
         const locales = [
@@ -72,8 +72,6 @@ class Buttons {
             )
         );
     };
-
-
 };
 
 export default Buttons;
