@@ -1,3 +1,5 @@
+import { LIST_SESSION_ADMIN } from "../panelAdmin/sessionAdmin/state.js";
+
 // session list
 export const LIST_SESSION = {
     // auth user
@@ -11,5 +13,8 @@ export const LIST_SESSION = {
     // order
     ORDERSEARCH: "order_search",
     // support
-    SUPPORT: "support"
+    SUPPORT: "support",
+
+    // session admin 
+    ...LIST_SESSION_ADMIN
 };
