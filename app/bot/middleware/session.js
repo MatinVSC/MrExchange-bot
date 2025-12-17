@@ -4,6 +4,8 @@ import AuthSession from "../session/authSession.js";
 import CryptoSession from "../session/cryptoSession.js";
 import OrderSession from "../session/orderSession.js";
 import SupportSession from "../session/supportSession.js";
+import MessageSession from "../panelAdmin/sessionAdmin/messageSession.js";
+import SupportAdmin from "../panelAdmin/sessionAdmin/adminSession.js";
 
 // event listner
 const event_listner = {
@@ -14,7 +16,11 @@ const event_listner = {
     // order
     ...OrderSession,
     // support
-    ...SupportSession
+    ...SupportSession,
+    // message panel
+    ...MessageSession,
+    // admin answer
+    ...SupportAdmin
 };
 
 

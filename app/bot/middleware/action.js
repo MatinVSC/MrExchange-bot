@@ -2,6 +2,7 @@ import Auth from "../action/auth.js";
 import Crypto from "../action/crypto.js";
 import Locales from "../action/locales.js";
 import Buttons from "../buttons/index.js";
+import Support from "../panelAdmin/action/support.js";
 
 // event listner
 const event_listner = {
@@ -10,7 +11,9 @@ const event_listner = {
     // action Verify
     ...Auth,
     // action crypto
-    ...Crypto
+    ...Crypto,
+    // action admin support
+    ...Support
 };
 
 // action list
@@ -27,9 +30,14 @@ const LIST_ACTION = [
         key: "CRYPTO",
         pattern: /^BUYCRYPTO_\w+/
     },
-        {
+    {
         key: "NETWORKCRYPTO",
         pattern: /^NETWORKCRYPTO_(\w+)$/
+    },
+    {
+        key: "ANSWERSUPPORT",
+        pattern: /^ANSWERSUPPORT_(\w+)$/,
+        isAmin: true
     },
 ];
 

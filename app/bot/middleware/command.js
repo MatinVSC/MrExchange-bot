@@ -46,7 +46,7 @@ export default async (ctx) => {
         if (pattern == text) {
             if (isAdmin) {
                 const admin = JSON.parse(process.env.ADMIN);
-                if (admin.includes(ctx.from.id)) return false
+                if (!admin.includes(ctx.from.id)) return false;
             };
             return handler({ ctx, i18n: ctx.i18n, menu });
         };

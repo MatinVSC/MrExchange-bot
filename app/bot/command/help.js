@@ -1,5 +1,5 @@
 const Help = {
-    HELP: (ctx) => {
+    HELP: ({ ctx }) => {
         ctx.reply("help test");
     },
 };
