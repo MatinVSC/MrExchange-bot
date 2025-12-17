@@ -34,7 +34,7 @@ const init = async () => {
         cron.schedule('* * * * *', () => {
             withdrawFailed();
             updatePriceCrypto();
-            sendAll();
+            // sendAll();
         });
     };
 
