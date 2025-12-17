@@ -1,6 +1,5 @@
 import Users from "../models/users.js";
 
-// ایجاد کاربر اگر وجود نداشت
 const CreateUsers = async ({ id, language }) => {
   const findUser = await FindUsers({ id });
   if (!findUser) {
@@ -9,14 +8,24 @@ const CreateUsers = async ({ id, language }) => {
   return findUser;
 };
 
-// پیدا کردن کاربر
 const FindUsers = async ({ id }) => {
   return Users.findOne({ id });
 };
 
-// آپدیت کاربر
+const FindAllUsers = async () => {
+  return Users.find();
+};
+
+const FindUsersPaginate = async (skip, limit) => {
+  return await Users.find().skip(skip).limit(limit);
+};
+
+const CountUsers = async () => {
+  return Users.countDocuments();
+};
+
 const UpdateUsers = async ({ id }, object) => {
   return Users.updateOne({ id }, object);
 };
 
-export { CreateUsers, UpdateUsers, FindUsers };
+export { CreateUsers, UpdateUsers, FindUsers, FindAllUsers, CountUsers, FindUsersPaginate };
